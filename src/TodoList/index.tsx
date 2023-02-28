@@ -22,7 +22,8 @@ const TodoList: React.FC<any> = ()=>{
         setNewTask(e.target.value);
     }
     const handleAddTask = ()=>{
-        let id = Object.keys(taskHash).length + 1;
+        let hashKeyArr = Object.keys(taskHash);
+        let id = hashKeyArr[hashKeyArr.length - 1] + 1;
         taskHash[id] = { task: newTask };
         setTaskHash(taskHash);
         setNewTask(""); // Reset new task entruy
